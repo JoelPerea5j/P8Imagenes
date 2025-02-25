@@ -1,43 +1,71 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MiImagen());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiImagen extends StatelessWidget {
+  const MiImagen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Mis Imagenes",
+            style: TextStyle(
+              fontSize: 25,
+              fontStyle: FontStyle.italic,
+              color: Color(0xffffffff),
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.pink,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(
+                "Joel Perea Castorena Mat:22308051281272",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  color: Color(0xff000000),
+                ),
+              ),
+              Image.network(
+                "https://raw.githubusercontent.com/JoelPerea5j/im-genes-para-APP-flutter-6J/refs/heads/main/Tokio.jpg",
+                width: 200,
+                height: 200,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                "Pallmall Tokio en github",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  color: Color(0xff1304e1),
+                ),
+              ),
+              Image.network(
+                "https://raw.githubusercontent.com/JoelPerea5j/im-genes-para-APP-flutter-6J/refs/heads/main/Marlboro1.png",
+                width: 300,
+                height: 200,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                "Marlboro rojo en github",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  color: Color(0xff1304e1),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    );
-  }
-}
+    ); //Material APP
+  } // Widgets
+} //Clase MiImagen
